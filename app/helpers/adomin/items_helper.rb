@@ -1,0 +1,2 @@
+module Adomin::ItemsHelper
+end

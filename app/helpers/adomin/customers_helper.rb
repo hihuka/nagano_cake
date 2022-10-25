@@ -1,0 +1,2 @@
+module Adomin::CustomersHelper
+end

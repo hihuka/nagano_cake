@@ -1,0 +1,2 @@
+module Adomin::OrdersDetailsHelper
+end

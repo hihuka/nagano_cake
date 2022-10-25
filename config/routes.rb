@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :order_details
   devise_for :orders
   devise_for :genres
@@ -16,4 +17,13 @@ Rails.application.routes.draw do
   get 'homes/top'
   get 'home/about' => 'homes#about'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  namespace :adomin do
+    resources :customers
+    resources :items
+    resources :genres, only:[:index, :update, :create, :edit]
+    resources :orders, only:[:index, :show, :update]
+    resources :order_details, only:[:update]
+
+    get 'homes/top'=> 'homes#admin'
+  end
 end
