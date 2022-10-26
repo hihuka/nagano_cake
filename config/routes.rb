@@ -10,14 +10,16 @@ Rails.application.routes.draw do
   registrations: "public/registrations",
   sessions: 'public/sessions'
 }
+
+ root to: "homes#top"
+  get 'homes/top'
+  get 'home/about' => 'homes#about'
+
   devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
   sessions: "admin/sessions"
 }
-  root to: "homes#top"
-  get 'homes/top'
-  get 'home/about' => 'homes#about'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  namespace :adomin do
+  namespace :admin do
     resources :customers
     resources :items
     resources :genres, only:[:index, :update, :create, :edit]

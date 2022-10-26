@@ -1,4 +1,4 @@
-class Adomin::GenresController < ApplicationController
+class Admin::GenresController < ApplicationController
   def index
   end
 
