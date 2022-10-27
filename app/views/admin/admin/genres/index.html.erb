@@ -1,2 +1,33 @@
-<h1>Adomin::Genres#index</h1>
-<p>Find me in app/views/adomin/genres/index.html.erb</p>
+<div class="container my-5">
+  <%= render "shared/flash_message" %>
+  <div class="row">
+    <h3 class="text title-text">
+      Genre List...
+    </h3>
+    <div class="ml-md-5 light-text">
+      <%= form_with model:@genre, url: admin_genres_path, local:true do |f| %>
+        <label class="text">ジャンル名</label>
+        <%= f.text_field :name %>
+        <%= f.submit '-New-', class: "btn btn-success btn-sm" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <table class="table col-md-4 border">
+      <thead class="table-active text">
+        <th>ジャンル</th>
+        <th></th>
+      </thead>
+      <tbody>
+        <% @genres.each do |genre| %>
+          <tr class="light-text">
+            <td><%= genre.name %></td>
+            <td><%= link_to "Edit", edit_admin_genre_path(genre.id), class: "btn btn-success btn-block" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="pagination"><%= paginate @genres, theme: 'twitter-bootstrap-4' %></div>
+</div>
