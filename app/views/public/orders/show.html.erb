@@ -93,14 +93,14 @@
         </thead>
 
         <tbody>
-          <% @order_items.each do |order_item| %>
+          <% @order_details.each do |order_detail| %>
           <tr class="light-text">
-            <td><%= order_item.item.name %></td>
-            <td><%= order_item.tax_price %></td>
-            <td><%= order_item.amount %></td>
+            <td><%= order_detail.item.name %></td>
+            <td><%= order_detail.tax_price %></td>
+            <td><%= order_detail.amount %></td>
             <td>
               <!-- 小計の計算 税込み単価×注文個数 -->
-              <%= order_item.tax_price * order_item.amount %>
+              <%= order_detail.tax_price * order_detail.amount %>
             </td>
           </tr>
           <% end %>

@@ -32,12 +32,12 @@ class Public::OrdersController < ApplicationController
 
 		#注文詳細内容の保存
 		current_customer.cart_items.each do |cart_item|
-			@order_item = OrderItem.new
-			@order_item.order_id = @order.id
-			@order_item.item_id = cart_item.item_id
-			@order_item.tax_price = cart_item.tax_price
-			@order_item.amount = cart_item.amount
-			@order_item.save!
+			@order_detail = OrderItem.new
+			@order_detail.order_id = @order.id
+			@order_detail.item_id = cart_item.item_id
+			@order_detail.tax_price = cart_item.tax_price
+			@order_detail.amount = cart_item.amount
+			@order_detail.save!
 		end
 
 		current_customer.cart_items.destroy_all
@@ -56,7 +56,7 @@ class Public::OrdersController < ApplicationController
 
 	def show
 		@order = Order.find(params[:id])
-		@order_items = @order.order_items
+		@order_details = @order.order_details
 	end
 
 private

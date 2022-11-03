@@ -1,0 +1,15 @@
+<div class="search-form">
+  <% if admin_signed_in? %>
+    <%= form_with url: search_path, method: :get, local: true do |f| %>
+      <%= f.text_field :content, class:"rounded" %>
+      <%= f.select :model, options_for_select({"Items" => "item" , "Customers" => "customer" }), {}, class: 'rounded font-italic' %>
+      <%= button_tag sanitize('<i class="fa fa-search"></i>'), :type => "submit", :class =>"btn btn-light btn-sm" %>
+    <% end %>
+  <% else %>
+    <%= form_with url: search_path, method: :get, local: true do |f| %>
+      <%= f.text_field :content, placeholder: "商品検索", class:"rounded" %>
+      <%= hidden_field_tag :model, "item" %>
+      <%= button_tag sanitize('<i class="fa fa-search"></i>'), :type => "submit", :class =>"btn btn-light btn-sm" %>
+    <% end %>
+  <% end %>
+</div>

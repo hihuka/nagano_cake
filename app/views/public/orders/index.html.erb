@@ -32,7 +32,7 @@
               <%= order.name %> 様
           </td>
           <td>
-            <% order.order_items.each do |f| %>
+            <% order.order_details.each do |f| %>
               <%= f.item.name %><br>
             <% end %>
           </td>
