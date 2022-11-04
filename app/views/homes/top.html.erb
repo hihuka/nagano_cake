@@ -1,5 +1,6 @@
 <body class="top-body">
   <div class="top-container">
+    <%= render "shared/flash_message" %>
 
     <div class="top-title text pt-5">
       <h1 style="text-align:center;">NagaNo Cake</h1>
@@ -18,9 +19,8 @@
         </div>
       </div>
     </div>
- </body>
 
-<div class="container">
+    <div class="container">
       <div class="top-comment mt-5">
         <p class="text" style="text-align:center;">
           ~Welcome to NagaNo Cake~</br>
@@ -31,3 +31,25 @@
       </div>
     </div>
   </div>
+
+  <div class="main-container">
+    <div class="my-5">
+      <h2 class="main-title" style="text-align:center;">〜NEW ITEMS〜</h2>
+    </div>
+    <div class="container">
+      <div class="main-box">
+        <div class="row">
+          <% @items.first(4).each do |item| %>
+            <div class="col-md-3 mx-auto item-box">
+              <div class="image-link"><%= link_to item_path(item.id) do %>
+              <%= attachment_image_tag item, :image, :fill, 250, 250, fallback: "no_image.jpg", size: "250x250" %></div>
+              <% end %>
+              <h5 class="text item_text pt-5 text-center"><%= item.name %></h5>
+              <p class="text text-center">￥<%= item.price.to_s(:delimited) %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

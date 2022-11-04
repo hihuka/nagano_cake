@@ -2,30 +2,31 @@
 <html>
   <head>
     <title>NaganoCake</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
-     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <% if customer_signed_in? %>
+        <%= render 'layouts/header_public' %>
+      <% elsif admin_signed_in? %>
+        <%= render 'layouts/header_admin' %>
+      <% else %>
+        <%= render 'layouts/header_logout' %>
+      <% end %>
     </header>
+
     <%= yield %>
 
     <footer class="footer text-white fixed-bottom p-2" style="background-color: #A52A2A;">
       <div class="row">
         <div class="offset-8 mt-3">
-          <p class="text footer-text">© Copyright 2022 株式会社NaganoCake.inc</p>
+          <p class="text footer-text">© Copyright 2022 株式会社 NaganoCake.inc</p>
         </div>
       </div>
     </footer>
   </body>
-
 </html>
