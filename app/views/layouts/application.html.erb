@@ -13,9 +13,9 @@
       <% if customer_signed_in? %>
         <%= render 'layouts/header_public' %>
       <% elsif admin_signed_in? %>
-        <%= render 'layouts/header_admin' %>
+        <%= render 'layouts/header.admin' %>
       <% else %>
-        <%= render 'layouts/header_logout' %>
+        <%= render 'layouts/header.logout' %>
       <% end %>
     </header>
 
