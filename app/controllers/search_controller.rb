@@ -1,4 +1,4 @@
-class Public::SearchController < ApplicationController
+class SearchController < ApplicationController
    def search
 		@model = params[:model]
 		@content = params[:content]

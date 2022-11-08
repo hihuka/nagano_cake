@@ -2,7 +2,7 @@
 
   <%= render "shared/flash_message" %>
 
-  <h3 class="my-4 text title-text">Address New / List...</h4>
+  <h3 class="my-4 text title-text">配送先登録 / 一覧</h4>
 
   <%= form_with model: @address, local:true do |f| %>
 
@@ -16,7 +16,7 @@
     <div class="form_group row mb-3 text">
       <%= f.label :address, "住所", class: "col-form-label col-3" %>
       <div class="col-7 text">
-        <%= f.text_field :address, class: "form-control", placeholder: "東京都" %>
+        <%= f.text_field :address, class: "form-control", placeholder: "東京都世田谷区" %>
       </div>
     </div>
 

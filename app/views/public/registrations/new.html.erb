@@ -6,7 +6,7 @@
 
     <div class="col-10 mx-auto">
 
-      <h2 class="my-5 text title-text">Sing up...</h2>
+      <h2 class="my-5 text title-text">会員登録</h2>
 
       <%= form_with model: @customer, url: customer_registration_path, local: true do |f| %>
         <%= render "shared/form_error", model: @customer %>
@@ -74,7 +74,7 @@
           <div class="col-1">
           </div>
           <div class="col-7 text">
-            <%= f.text_field :address, autofocus: true, placeholder: "東京都千代田区丸の内, class: "w-100" %>
+            <%= f.text_field :address, autofocus: true, placeholder: "東京都世田谷区", class: "w-100" %>
           </div>
         </div>
 
@@ -92,7 +92,7 @@
             <%= f.label :password, "パスワード（６文字以上）" %>
           </div>
           <div class="col-3 text">
-            <%= f.password_field :password, autocomplete: "new-password", class: "w-100" %>
+            <%= f.password_field :password, autocomplete: "", class: "w-100" %>
           </div>
         </div>
 
