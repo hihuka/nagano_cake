@@ -60,3 +60,15 @@ gem 'devise'
 gem 'kaminari','~> 1.2.1'
 
 gem 'bootstrap4-kaminari-views'
+
+gem 'font-awesome-sass', '~> 5.13'
+
+gem 'jquery-rails'
+
+gem 'jquery-turbolinks'
+
+gem 'will_paginate', '3.1.7'
+
+gem 'will_paginate-bootstrap4'
+
+gem 'rails-i18n'

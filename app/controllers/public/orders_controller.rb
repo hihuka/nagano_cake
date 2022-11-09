@@ -51,6 +51,8 @@ class Public::OrdersController < ApplicationController
 #会員の注文履歴一覧表示(うえ)
 	def index
 		@orders = current_customer.orders
+		# kaminariの基本形は"モデル.page"ですが今回基本形と異なる形でデータを取り寄せてるので下記のように明記します。
+		@orders = Kaminari.paginate_array(@orders).page(params[:page]).per(8)
 
 	end
 

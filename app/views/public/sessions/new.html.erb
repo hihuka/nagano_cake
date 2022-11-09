@@ -1,3 +1,10 @@
+<div class="container">
+
+  <%= render "shared/flash_message" %>
+
+  <div class="row mb-5">
+
+    <div class="col-10 mx-auto">
 
       <h2 class="mt-5 mb-4 ml-n4 text title-text">ログイン</h2>
       <h4 class="mt-5 mb-4 text">会員の方はこちらから</h4>
@@ -8,14 +15,14 @@
           <%= f.label :email, "E-mail", class: "col-4" %>
           <div class="col-8 text">
             <%= f.email_field :email, autofocus: true, autocomplete: "email",
-            placeholder: "customer@gmail.com", class: "col-8" %>
+            placeholder: "simple@gmail.com", class: "col-8" %>
           </div>
         </div>
 
         <div class="form-group row text">
           <%= f.label :password, "Password", class: "col-4" %>
           <div class="col-8 text">
-            <%= f.password_field :password, autocomplete: "password",
+            <%= f.password_field :password, autocomplete: "current_password",
             class: "col-8"%>
           </div>
         </div>

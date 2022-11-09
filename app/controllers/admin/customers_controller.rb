@@ -1,6 +1,4 @@
 class Admin::CustomersController < ApplicationController
-
-  class Admin::CustomersController < ApplicationController
   before_action :authenticate_admin!
 
   def index
@@ -32,5 +30,4 @@ class Admin::CustomersController < ApplicationController
       :first_name, :last_name, :first_name_kana, :last_name_kana, :postal_code, :address, :telephone_number, :email, :is_deleted)
   end
 
-  end
 end

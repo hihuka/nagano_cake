@@ -1,6 +1,6 @@
 <div class="container">
 
-
+ <%= render "shared/flash_message" %>
   <div class="row mb-5">
 
     <div class="col-10 mx-auto">
@@ -12,14 +12,14 @@
         <div class="mt-4 form-group row text">
           <%= f.label :email, "E-mail", class: "col-3 offset-2 col-form-label" %>
           <div class="col-5 light-text">
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "admin@gmail.com", class: "form-control" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sample@gmail.com", class: "form-control" %>
           </div>
         </div>
 
         <div class="form-group row text">
           <%= f.label :password, "Password", class: "col-3 offset-2 col-form-label" %>
           <div class="col-5 light-text">
-            <%= f.password_field :password, autocomplete: "password", class: "form-control" %>
+            <%= f.password_field :password, autocomplete: "current_password", class: "form-control" %>
           </div>
         </div>
 
