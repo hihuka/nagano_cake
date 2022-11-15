@@ -12,7 +12,7 @@
 </div>
 <div class="row mt-2 light-text">
   <label class="col-md-2 mr-2 text">ジャンル</label>
-  <%= f.collection_select :genre_id, genre.all, :id, :name, include_blank: "選択して下さい", class:"col-md-4" %>
+  <%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "選択して下さい", class:"col-md-4" %>
 </div>
 <div class="row mt-2 light-text">
   <label class="col-md-2 mr-2 text">価格</label>
