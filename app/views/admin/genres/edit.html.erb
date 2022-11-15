@@ -2,7 +2,7 @@
   <div class="col-5">
     <h3 class="mt-5 text title-sub-text">ジャンル編集</h3>
   </div>
-  <%= form_with model: @genre, url: admin_genres_path, local: true do |f| %>
+  <%= form_with model: @genre, url: admin_genre_path, local: true do |f| %>
     <p class="mt-5 text">ジャンル名
       <span><%= f.text_field :name %></span>
       <span class="ml-5"><%= f.submit '-Save-', class: "glyphicon glyphicon-pencil btn btn-success" %></span>

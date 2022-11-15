@@ -1,3 +1,66 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+*/
+.image1 {
+  background-image: url(asset_path('top/cake1.jpg'));
+}
+
+.image2 {
+  background-image: url(asset_path('top/cake2.jpg'));
+}
+
+.image3 {
+  background-image: url(asset_path('top/cake3.jpg'));
+}
+
+.image4 {
+  background-image: url(asset_path('top/cake4.jpg'));
+}
+
+.image_box {
+  height: 500px;
+}
+
+// 商品のhoverアクション //
+.main-box {
+  margin-bottom: 350px;
+}
+
+.item-box {
+  width: 25%;
+  height: 150px;
+}
+
+.image-link {
+  border: 1px solid #ddd;
+  width: 300px;
+  height: 226px;
+  margin: 20px auto 0;
+  transition-duration: 0.5s;
+  width: 88%;
+  cursor: pointer;
+}
+
+.image-link:hover {
+  box-shadow: 20px 20px 20px rgba(0,0,0,0.9);
+  transform: translateY(-10px);
+  transition-duration: 0.5s;
+}
+
+// 商品一覧のhover //
+.img-wrap {
+  width: 250px;
+  height: 200spx;
+  margin: 20px auto 0;
+  transition-duration: 0.5s;
+}
+.img-wrap img {
+  width: 100%;
+  cursor: pointer;
+}
+.img-wrap:hover {
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+  transform: translateY(-10px);
+  transition-duration: 0.5s;
+}
