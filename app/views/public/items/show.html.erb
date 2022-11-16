@@ -1,7 +1,11 @@
 <div class="container">
   <div class="row item-show-box">
     <div class="mt-5 col-md-6">
-    <%= attachment_image_tag @item, :image, :fill, 400, 300, fallback: "default_image.jpg", size: "400x300", class:"border" %>
+    <% if @item.image.attached? %>
+     <%= image_tag @item.image, size: "400x300" %>
+    <% else %>
+     <%= image_tag 'no_image', size: "400x300" %>
+    <% end %>
     </div>
     <div class="mt-5 col-md-6">
       <h4 class="text item-text"><%= @item.name %></h4>

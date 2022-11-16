@@ -72,3 +72,6 @@ gem 'will_paginate', '3.1.7'
 gem 'will_paginate-bootstrap4'
 
 gem 'rails-i18n'
+
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile-mini_magick"

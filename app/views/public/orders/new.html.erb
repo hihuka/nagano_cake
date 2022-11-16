@@ -37,7 +37,7 @@
 					登録済住所から選択
 				</label></br>
 				<div class="light-text">
-		    	<%= f.collection_select :select_address, @addresses, :id, :address_select %>
+		    	<%= f.collection_select :select_address, @addresses, :address_select %>
 		    </div>
 			</div>
 
@@ -50,7 +50,8 @@
 					<%= f.label :postal_code, "郵便番号（ハイフンなし）" %>
 					<%= f.text_field :postal_code, placeholder: "0000000" %></br>
 					<%= f.label :address, "住所　　　　　　　　　　" %>
-					<%= f.text_field :address, placeholder: "東京都世田谷区" %></br>
+					<%= f.text_field :address, placeholder: "東京都世田谷区
+					" %></br>
 					<%= f.label :name, "宛名　　　　　　　　　　" %>
 					<%= f.text_field :name, placeholder: "山田進" %></br>
 				</div>
