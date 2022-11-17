@@ -21,7 +21,7 @@
 
 			<h4 class="text"><お届け先></h4>
 			<div class="form-check">
-				<input class="form_check_input" genre="radio" name="order_address" id="customer_address" value="option1" checked>
+				<input class="form_check_input" type="radio" name="order_address" id="customer_address" value="option1" checked>
 				<label class="form_check_label text" for="customer_address">
 					ご自身の住所
 				</label></br>
@@ -32,17 +32,17 @@
 			</div>
 
 			<div class="form-check">
-				<input class="form_check_input" genre="radio" name="order_address" id="add_address" value="option2" >
+				<input class="form_check_input" type="radio" name="order_address" id="add_address" value="option2" >
 				<label class="form_check_label text" for="add_address">
 					登録済住所から選択
 				</label></br>
 				<div class="light-text">
-		    	<%= f.collection_select :select_address, @addresses, :address_select %>
+		     <%= f.select :address_id, options_from_collection_for_select (:select_address, @addresses, :id, :address_select) %>
 		    </div>
 			</div>
 
 			<div class="form-check">
-				<input class="form_check_input" genre="radio" name="order_address" id="new_address" value="option3" >
+				<input class="form_check_input" type="radio" name="order_address" id="new_address" value="option3" >
 				<label class="form_check_label text" for="new_address">
 					新しいお届け先
 				</label></br>
