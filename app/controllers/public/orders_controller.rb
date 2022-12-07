@@ -32,12 +32,11 @@ class Public::OrdersController < ApplicationController
 
 		#注文詳細内容の保存
 		current_customer.cart_items.each do |cart_item|
-			@order_detail = OrderItem.new
+			@order_detail = OrderDetail.new
 			@order_detail.order_id = @order.id
-			@order_detail.item_id = cart_item.item_id
+			@order_detail.detail_id = cart_item.item_id
 			@order_detail.tax_price = cart_item.tax_price
 			@order_detail.amount = cart_item.amount
-			@order_detail.save!
 		end
 
 		current_customer.cart_items.destroy_all
@@ -64,7 +63,7 @@ class Public::OrdersController < ApplicationController
 private
 
 def order_params
-	params.amount(:order).permit(:customer_id, :payment_method, :total_payment, :postal_code, :address, :name)
+	params.require(:order).permit(:customer_id, :payment_method, :total_payment, :postal_code, :address, :name)
 end
 
 end

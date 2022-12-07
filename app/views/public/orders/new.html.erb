@@ -37,7 +37,7 @@
 					登録済住所から選択
 				</label></br>
 				<div class="light-text">
-		     <%= f.select :address_id, options_from_collection_for_select (:select_address, @addresses, :id, :address_select) %>
+					<%= 'f.collection_select :select_address, @addresses, :id, :address_select' %>
 		    </div>
 			</div>
 

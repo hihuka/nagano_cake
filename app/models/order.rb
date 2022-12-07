@@ -14,8 +14,8 @@ class Order < ApplicationRecord
 
     after_update do
       if self.order_status == "入金確認"
-        self.order_details.each {|order_detail|
-        order_detail.update(making_status: "製作待ち")
+        self.order_details.each {|order_details|
+        order_details.update(making_status: "製作待ち")
         }
       end
     end
